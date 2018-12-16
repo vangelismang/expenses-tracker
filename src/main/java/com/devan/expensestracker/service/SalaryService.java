@@ -22,7 +22,7 @@ public class SalaryService extends ServiceBaseImpl<SalaryRecord, Long> {
             if (!(current - last < 86400 && lastRecord.getAmount().equals(record.getAmount()))) {
                 super.create(record);
             }
-        }else {
+        } else {
             super.create(record);
         }
     }
