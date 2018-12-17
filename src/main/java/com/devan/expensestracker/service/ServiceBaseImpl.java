@@ -40,8 +40,8 @@ public abstract class ServiceBaseImpl<E extends Record, ID extends Long> impleme
     }
 
     @Override
-    public List<BigDecimal> getTotalAmountPerMonth() throws ParseException {
-       List<BigDecimal> results = new ArrayList<>();
+    public List<Number> getTotalAmountPerMonth() throws ParseException {
+       List<Number> results = new ArrayList<>();
         SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yy");
 
         for(int i = 1; i<13; i++){

@@ -17,5 +17,5 @@ public interface ServiceBase<E extends Record, ID extends Number> {
 
     Instant findLastUpdateDate();
 
-    List<BigDecimal> getTotalAmountPerMonth() throws ParseException;
+    List<Number> getTotalAmountPerMonth() throws ParseException;
 }

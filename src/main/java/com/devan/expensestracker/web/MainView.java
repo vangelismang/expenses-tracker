@@ -19,8 +19,8 @@ public class MainView extends VerticalLayout {
 
     public MainView(ExpensesService service, SalaryService salaryService) throws ParseException {
 
-        List<BigDecimal> expenses = service.getTotalAmountPerMonth();
-        List<BigDecimal> salary = salaryService.getTotalAmountPerMonth();
+        List<Number> expenses = service.getTotalAmountPerMonth();
+        List<Number> salary = salaryService.getTotalAmountPerMonth();
         Chart chart = new Chart(ChartType.COLUMN);
         Configuration conf = chart.getConfiguration();
         conf.setTitle("My expenses");
@@ -34,10 +34,8 @@ public class MainView extends VerticalLayout {
         // Series configuration
         ListSeries seriesA = new ListSeries("Monthly expenses in euro");
         ListSeries seriesB = new ListSeries("Monthly salary in euro");
-        seriesA.setData(expenses.get(0), expenses.get(1), expenses.get(2), expenses.get(3), expenses.get(4), expenses.get(5),
-                expenses.get(6), expenses.get(7), expenses.get(8), expenses.get(9), expenses.get(10), expenses.get(11));
-        seriesB.setData(salary.get(0), salary.get(1), salary.get(2), salary.get(3), salary.get(4), salary.get(5),
-                salary.get(6), salary.get(7), salary.get(8), salary.get(9), salary.get(10), salary.get(11));
+        seriesA.setData(expenses);
+        seriesB.setData(salary);
         conf.addSeries(seriesA);
         conf.addSeries(seriesB);
         // Axis configuration
